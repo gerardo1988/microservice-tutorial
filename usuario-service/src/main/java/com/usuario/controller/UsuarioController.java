@@ -1,5 +1,6 @@
 package com.usuario.controller;
 
+import com.usuario.entities.CuentaDTO;
 import com.usuario.entities.Usuario;
 import com.usuario.models.Carro;
 import com.usuario.models.Moto;
@@ -93,5 +94,10 @@ public class UsuarioController {
 
     }
     //fin metodos feign
+    @PostMapping("/cuentita")
+    public ResponseEntity<Integer> resultado(@RequestBody CuentaDTO cuentaDTO) {
+        int resultado = usuarioService.cuenta(cuentaDTO);
+        return ResponseEntity.ok(resultado);
+    }
 
 }

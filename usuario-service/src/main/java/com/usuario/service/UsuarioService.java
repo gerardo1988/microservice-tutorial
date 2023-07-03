@@ -1,5 +1,6 @@
 package com.usuario.service;
 
+import com.usuario.entities.CuentaDTO;
 import com.usuario.entities.Usuario;
 import com.usuario.feingclients.CarroFeingClient;
 import com.usuario.feingclients.MotoFeignClient;
@@ -99,5 +100,14 @@ public class UsuarioService {
     public Usuario save(Usuario usuario){
         Usuario nuevoUsuario = usuarioRepository.save(usuario);
         return nuevoUsuario;
+    }
+
+    //mi metodo
+    public int cuenta(CuentaDTO cuentaDTO){
+        int num1 = cuentaDTO.getN1();
+        int num2 = cuentaDTO.getN2();
+
+        int resultado = num1 + num2;
+        return resultado;
     }
 }
