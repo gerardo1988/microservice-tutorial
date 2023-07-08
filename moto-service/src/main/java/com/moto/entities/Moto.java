@@ -18,7 +18,7 @@ public class Moto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     private String marca;
     private String modelo;

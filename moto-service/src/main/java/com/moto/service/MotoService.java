@@ -10,14 +10,14 @@ import java.util.List;
 @Service
 public class MotoService {
 
-    @Autowired
+    @Autowired(required = true)
     private MotoRepository  motoRepository;
 
     public List<Moto> getAll(){
         return motoRepository.findAll();
     }
 
-    public Moto getMotoById(int id){
+    public Moto getMotoById(long id){
         return motoRepository.findById(id).orElse(null);
     }
 
@@ -26,7 +26,7 @@ public class MotoService {
         return nuevaMoto;
     }
 
-    public List<Moto> byUsuarioId(int usuarioId){
+    public List<Moto> byUsuarioId(long usuarioId){
         return motoRepository.findByUsuarioId(usuarioId);
     }
 }

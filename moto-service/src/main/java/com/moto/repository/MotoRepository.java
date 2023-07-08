@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MotoRepository extends JpaRepository<Moto, Integer> {
+public interface MotoRepository extends JpaRepository<Moto, Long> {
 
-    List<Moto> findByUsuarioId(int usuarioId);
+    List<Moto> findByUsuarioId(Long usuarioId);
 }
