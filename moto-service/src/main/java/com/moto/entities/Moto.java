@@ -9,11 +9,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
 public class Moto {
 
     @Id
@@ -23,4 +24,6 @@ public class Moto {
     private String marca;
     private String modelo;
     private int usuarioId;
+
+
 }

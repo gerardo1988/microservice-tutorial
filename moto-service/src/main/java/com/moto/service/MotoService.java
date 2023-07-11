@@ -7,26 +7,29 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class MotoService {
 
-    @Autowired(required = true)
-    private MotoRepository  motoRepository;
+
+    @Autowired()
+    private MotoRepository  entityManagerFactory;
+
 
     public List<Moto> getAll(){
-        return motoRepository.findAll();
+        return entityManagerFactory.findAll();
     }
 
     public Moto getMotoById(long id){
-        return motoRepository.findById(id).orElse(null);
+        return entityManagerFactory.findById(id).orElse(null);
     }
 
     public Moto save(Moto moto){
-        Moto nuevaMoto = motoRepository.save(moto);
+        Moto nuevaMoto = entityManagerFactory.save(moto);
         return nuevaMoto;
     }
 
     public List<Moto> byUsuarioId(long usuarioId){
-        return motoRepository.findByUsuarioId(usuarioId);
+        return entityManagerFactory.findByUsuarioId(usuarioId);
     }
 }
